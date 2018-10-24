@@ -5,8 +5,8 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/wenlongup/config-springCloud.git
+          uri: git@github.com:WenLongUP/spring-cloud.git
           default-label: master
-          basedir: target/config
+          search-paths: config
 server:
   port: 8889

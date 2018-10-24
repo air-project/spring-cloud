@@ -4,7 +4,7 @@ spring:
   cloud:
     config:
       uri: http://localhost:8889/
-      profile: pro
+      profile: dev
       label: master
       name: config
 server:
