@@ -23,6 +23,8 @@ public class OrderController {
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public List<String> getOrderList(){
-        return orderService.getOrderList();
+        List<String> list = orderService.getOrderList();
+        list.add("order service");
+        return list;
     }
 }

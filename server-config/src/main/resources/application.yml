@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: server-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/wenlongup/config-springCloud.git
+          default-label: master
+          basedir: target/config
+server:
+  port: 8889

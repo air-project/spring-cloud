@@ -19,7 +19,7 @@ public class OrderService {
     private RestTemplate restTemplate;
 
     public List<String> getOrderList(){
-        List<String> orderList = restTemplate.getForObject("http://member-service/list", List.class);
+        List<String> orderList = restTemplate.getForObject("http://service-member/list", List.class);
         return orderList;
     }
 }
