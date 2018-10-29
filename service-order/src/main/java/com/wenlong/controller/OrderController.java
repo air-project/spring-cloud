@@ -1,5 +1,6 @@
 package com.wenlong.controller;
 
+import com.wenlong.service.IOrderService;
 import com.wenlong.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,10 +22,21 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @Autowired
+    private IOrderService orderService1;
+
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public List<String> getOrderList(){
         List<String> list = orderService.getOrderList();
         list.add("order service");
         return list;
     }
+
+    @RequestMapping(value = "/listFeign", method = RequestMethod.GET)
+    public List<String> getMenberList(){
+        List<String> list = orderService1.getMembers();
+        list.add("order service 使用Feign调用 member service");
+        return list;
+    }
+
 }
