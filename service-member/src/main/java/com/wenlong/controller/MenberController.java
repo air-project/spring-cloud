@@ -27,6 +27,13 @@ public class MenberController {
         list.add("zhangsan");
         list.add("wangwu");
         list.add(port);
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         return list;
     }
 }

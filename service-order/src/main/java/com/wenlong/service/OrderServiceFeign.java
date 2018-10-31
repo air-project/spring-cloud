@@ -1,5 +1,6 @@
 package com.wenlong.service;
 
+import com.wenlong.service.fallback.OrderServiceFeignFallBack;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -11,9 +12,10 @@ import java.util.List;
  * @ Description：${description}
  * @ Modified By：使用Feign调用service-member
  */
-@FeignClient("service-member")
-public interface IOrderService {
+@FeignClient(value = "service-member", fallback = OrderServiceFeignFallBack.class)
+public interface OrderServiceFeign {
 
     @RequestMapping("/list")
     List<String> getMembers();
+
 }
